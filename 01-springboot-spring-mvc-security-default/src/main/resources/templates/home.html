@@ -26,19 +26,22 @@
 </p>
 
 <hr>
-<!--Add link to a point to /leaders ... this is for managers-->
 
+<div sec:authentication="hasRole('Manager')">
+<!--Add link to a point to /leaders ... this is for managers-->
 <p>
     <a th:href="@{/leaders}">Leadership Meeting</a>
     (only for managers)
 </p>
+</div>
 
+<div sec:authentication="hasRole('Admin')">
 <!--Add a link to point to systems ....this is only for admins-->
-
 <p>
     <a th:href="@{/systems}">IT Systems Meeting</a>
     (only for Admins)
 </p>
+</div>
 
 
 <hr>
